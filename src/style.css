@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+  --color-primary: tomato;
+  --color-primary-rgb: 255, 99, 71;
+  --color-line: #ddd;
+  --opacity: 0.33;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(./images/background.png);
+  height: 100%;
+  padding: 20px 0;
+}
+
+form {
+  width: 100%;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  height: 100%;
+}
+
+.article-info:hover {
+  cursor: pointer;
+}
+
+.icon-disabled {
+  opacity: var(--opacity);
+}
+
+.icon-activated {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+input {
+  border: 1px solid transparent;
+  font-size: 1rem;
+  outline: none;
+  padding: 20px 40px 20px 10px;
+  transition: 0.5s;
+  width: 100%;
+}
+
+input:focus {
+  background-color: rgba(var(--color-primary-rgb), 0.075);
+  transition: 0.5s;
+}
+
+input::placeholder {
+  color: rgba(var(--color-primary-rgb), 0.66);
+  font-style: italic;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.text-completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.todoWin {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+  height: auto;
+  max-width: 400px;
+  width: 90%;
+}
+
+.win-empty {
+  border-top: 1px solid var(--color-line);
+  color: rgba(0, 0, 0, 0.5);
+  padding: 20px 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.win-empty span {
+  margin: 0 auto;
+}
+
+.win-form {
+  align-items: center;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.win-form button {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  height: 30px;
+  position: absolute;
+  right: 4px;
+  width: 30px;
+}
+
+.win-form button:hover {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.win-header {
+  align-items: center;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(235, 235, 235, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  border-bottom: 1px solid var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding: 10px;
+  width: 100%;
+}
+
+.win-header .icon {
+  opacity: var(--opacity);
+}
+
+#task-list {
+  list-style-type: none;
+}
+
+#task-list li {
+  align-items: center;
+  border-top: 1px solid var(--color-line);
+  display: flex;
+  justify-content: space-between;
+}
+
+#task-list li:hover {
+  cursor: move;
+}
+
+#task-list li .article-info {
+  align-items: center;
+  display: flex;
+  padding: 10px 0 10px 10px;
+  user-select: none;
+}
+
+#task-list li .article-info .icon {
+  margin-right: 7px;
+}
+
+#task-list li .article-btn {
+  align-items: center;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  opacity: var(--opacity);
+  user-select: none;
+  width: 36px;
+}
+
+#task-list li .article-btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#task-list li .article-btnset {
+  display: flex;
+}
+
+#win-footer {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-top: 1px solid var(--color-primary);
+  padding: 16px 10px;
+  text-align: center;
+  transition: 0.5s;
+  user-select: none;
+  width: 100%;
+}
+
+#win-footer:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: 0.5s;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+        crossorigin="anonymous"
+    />    
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="todoWin">
+            <div class="win-header">
+                <p>Today's To Do</p>
+                <p id="showDate">...</p>
+            </div>
+            
+            <form id="todoform" name="todoform" method="get" class="win-form">
+                <input 
+                    id="taskText" 
+                    type="text" 
+                    value="" 
+                    placeholder="Add to your list" 
+                    autocomplete="off"
+                    required 
+                />
+                <button type="submit" title="Add task">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </form>
+
+            <div>
+                <ul id="task-list"></ul>
+            </div>
+
+            <div id="win-footer">Clear all completed</div>
+        </div>
+    </div>
+</body>
+</html>
