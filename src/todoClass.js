@@ -75,6 +75,14 @@ export default class TodoMaster {
     return tasks;
   }
 
+  newtask(content) {
+    let li = document.createElement("li");
+
+    li.setAttribute('draggable','true');
+    li.setAttribute('id',`task${item.index}`);
+    return li.appendChild(document.createTextNode(content));
+  }
+
   reorder() {
     const tasks = this.constructor.get();
     const ul = document.getElementById('task-list');
@@ -92,34 +100,23 @@ export default class TodoMaster {
     const task = this.constructor.get();
     const taskList = document.getElementById('task-list');
 
+    taskList.innerHTML = '';
+
     if (task.length) {
-      let tasklist = '';
-
       task.forEach((item) => {
-        let showIcon = 'far fa-square icon icon-disabled';
-        let showText = '';
-
-        if (item.completed) {
-          showIcon = 'fas fa-check icon icon-activated';
-          showText = 'class="text-completed"';
-        }
-
-        tasklist += `<li draggable="true" id="task${item.index}">
-              <div id="axn${item.index}" class="article-info" data-id="${item.index}" onmousedown="return false">
+        let content = `<div id="axn${item.index}" class="article-info" data-id="${item.index}" onmousedown="return false">
                 <i id="icon${item.index}" class="${showIcon}"></i>
                 <p id="title${item.index}" ${showText}>${item.description}</p>
-              </div>
-              
-              <div id="del${item.index}" class="article-btn" title="Delete Task" onmousedown="return false">
+            </div>
+        
+            <div id="del${item.index}" class="article-btn" title="Delete Task" onmousedown="return false">
                 <i class="fas fa-trash-alt icon"></i>
-              </div>            
-              
-          </li>`;
-      });
+            </div>`;
 
-      taskList.innerHTML = tasklist;
+        ul.appendChild(newtask(content));  
+      });
     } else {
-      taskList.innerHTML = '<li class="win-empty" onmousedown="return false"><span>No task availables</span></i>';
+      ul.appendChild(newtask('<span>No task availables</span></i>'));  
     }
 
     return true;
