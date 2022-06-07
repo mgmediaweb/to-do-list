@@ -75,11 +75,11 @@ export default class TodoMaster {
     return tasks;
   }
 
-  newtask(content) {
-    let li = document.createElement("li");
+  static newtask(content, index = null) {
+    const li = document.createElement('li');
 
-    li.setAttribute('draggable','true');
-    li.setAttribute('id',`task${item.index}`);
+    li.setAttribute('draggable', 'true');
+    li.setAttribute('id', `task${index}`);
     return li.appendChild(document.createTextNode(content));
   }
 
@@ -104,7 +104,15 @@ export default class TodoMaster {
 
     if (task.length) {
       task.forEach((item) => {
-        let content = `<div id="axn${item.index}" class="article-info" data-id="${item.index}" onmousedown="return false">
+        let showIcon = 'far fa-square icon icon-disabled';
+        let showText = '';
+
+        if (item.completed) {
+          showIcon = 'fas fa-check icon icon-activated';
+          showText = 'class="text-completed"';
+        }
+
+        const content = `<div id="axn${item.index}" class="article-info" data-id="${item.index}" onmousedown="return false">
                 <i id="icon${item.index}" class="${showIcon}"></i>
                 <p id="title${item.index}" ${showText}>${item.description}</p>
             </div>
@@ -113,10 +121,10 @@ export default class TodoMaster {
                 <i class="fas fa-trash-alt icon"></i>
             </div>`;
 
-        ul.appendChild(newtask(content));  
+        taskList.appendChild(this.constructor.newtask(content, item.index));
       });
     } else {
-      ul.appendChild(newtask('<span>No task availables</span></i>'));  
+      taskList.appendChild(this.constructor.newtask('<span>No task availables</span>'));
     }
 
     return true;
