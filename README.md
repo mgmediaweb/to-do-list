@@ -1,8 +1,9 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To Do List
 
-> Very useful website application to memorize all the tasks of the day, mark the complete ones, organize them by importance and finally delete them
+> ##### Very useful website application to memorize all the tasks of the day, mark the complete ones, organize them by importance and finally delete them.
+> ##### This application uses the local memory of your device to store the information, it is updated in real time and the information persists even if you turn off your device.
 
 
 ## Built With
