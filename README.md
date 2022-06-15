@@ -2,7 +2,7 @@
 
 # Project Name
 
-> Todo List.
+> Very useful website application to memorize all the tasks of the day, mark the complete ones, organize them by importance and finally delete them
 
 
 ## Built With
